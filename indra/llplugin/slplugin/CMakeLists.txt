@@ -37,6 +37,8 @@ target_link_libraries(SLPlugin
         ll::pluginlibraries
         )
 
+target_precompile_headers(SLPlugin REUSE_FROM llprecompiled)
+
 if (WINDOWS)
   set_target_properties(SLPlugin
     PROPERTIES

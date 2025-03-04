@@ -89,6 +89,8 @@ if (BUILD_HEADLESS)
           llxml
           llfilesystem
           )
+
+  target_precompile_headers(llrenderheadless REUSE_FROM llprecompiled)
 endif (BUILD_HEADLESS)
 
 add_library (llrender ${llrender_SOURCE_FILES})
@@ -108,3 +110,4 @@ target_link_libraries(llrender
         OpenGL::GLU
         )
 
+target_precompile_headers(llrender REUSE_FROM llprecompiled)

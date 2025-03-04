@@ -27,3 +27,4 @@ target_link_libraries( llimagej2coj
         ll::openjpeg
     )
 
+target_precompile_headers(llimagej2coj REUSE_FROM llprecompiled)

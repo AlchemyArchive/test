@@ -70,3 +70,5 @@ target_link_libraries(
         llfilesystem
         llxml
     )
+
+target_precompile_headers(llcharacter REUSE_FROM llprecompiled)

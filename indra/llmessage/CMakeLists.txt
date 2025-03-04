@@ -194,6 +194,8 @@ target_link_libraries(
 )
 target_include_directories( llmessage  INTERFACE   ${CMAKE_CURRENT_SOURCE_DIR})
 
+target_precompile_headers(llmessage REUSE_FROM llprecompiled)
+
 # tests
 if (LL_TESTS)
   SET(llmessage_TEST_SOURCE_FILES

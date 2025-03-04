@@ -159,6 +159,8 @@ if (BUILD_HEADLESS)
     PROPERTY COMPILE_DEFINITIONS LL_MESA=1 LL_MESA_HEADLESS=1
     )
   target_link_libraries (llwindowheadless ${llwindowheadless_LINK_LIBRARIES} dl)
+
+  target_precompile_headers(llwindowheadless REUSE_FROM llprecompiled)
 endif (BUILD_HEADLESS)
 
 if (llwindow_HEADER_FILES)
@@ -178,8 +180,10 @@ if (SDL_FOUND)
     )
 endif (SDL_FOUND)
 
-  target_link_libraries (llwindow ${llwindow_LINK_LIBRARIES})
-  target_include_directories(llwindow INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries (llwindow ${llwindow_LINK_LIBRARIES})
+target_include_directories(llwindow INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})
+
+target_precompile_headers(llwindow REUSE_FROM llprecompiled)
 
 if (DARWIN)
   target_link_libraries(llwindow ${CARBON_LIBRARY})

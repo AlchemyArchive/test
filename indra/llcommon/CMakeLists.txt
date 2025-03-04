@@ -271,6 +271,7 @@ add_library (llcommon ${llcommon_SOURCE_FILES})
 
 target_link_libraries(
         llcommon
+        llmath
         ll::apr
         ll::expat
         ll::zlib-ng
@@ -282,6 +283,8 @@ target_link_libraries(
 
 target_include_directories(llcommon INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})
 target_include_directories(llcommon PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+
+target_precompile_headers(llcommon REUSE_FROM llprecompiled)
 
 add_dependencies(llcommon stage_third_party_libs)
 

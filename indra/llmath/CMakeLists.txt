@@ -104,6 +104,8 @@ add_library (llmath ${llmath_SOURCE_FILES})
 target_link_libraries(llmath llcommon llmeshoptimizer ll::sse2neon)
 target_include_directories( llmath  INTERFACE   ${CMAKE_CURRENT_SOURCE_DIR})
 
+target_precompile_headers(llmath REUSE_FROM llprecompiled)
+
 # Add tests
 if (LL_TESTS)
   include(LLAddBuildTest)

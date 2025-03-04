@@ -270,6 +270,8 @@ target_link_libraries(llui
         llcommon
     )
 
+target_precompile_headers(llui REUSE_FROM llprecompiled)
+
 # Add tests
 if(LL_TESTS)
   include(LLAddBuildTest)

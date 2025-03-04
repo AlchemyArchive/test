@@ -72,6 +72,8 @@ target_link_libraries(llprimitive
         ll::glm
         )
 
+target_precompile_headers(llprimitive REUSE_FROM llprecompiled)
+
 #add unit tests
 if (LL_TESTS)
     INCLUDE(LLAddBuildTest)

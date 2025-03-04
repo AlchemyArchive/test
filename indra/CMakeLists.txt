@@ -70,6 +70,7 @@ endif (NOT CMAKE_BUILD_TYPE)
 
 add_subdirectory(cmake)
 
+add_subdirectory(${LIBS_OPEN_PREFIX}llprecompiled)
 add_subdirectory(${LIBS_OPEN_PREFIX}llaudio)
 add_subdirectory(${LIBS_OPEN_PREFIX}llappearance)
 add_subdirectory(${LIBS_OPEN_PREFIX}llcharacter)
